@@ -1,0 +1,394 @@
+/* ========== General Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  transition: background 0.3s, color 0.3s;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ========== Dark Mode ========== */
+body.dark {
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+}
+
+body.dark a {
+  color: #60a5fa;
+}
+
+body.dark .btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+body.dark .image-card img {
+  border-color: #374151;
+}
+
+body.dark .proj-btn {
+  background-color: #374151;
+  color: #ffffff;
+}
+
+/* ========== Dark Mode Toggle ========== */
+#toggle-dark {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#toggle-dark:hover {
+  background-color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 120px auto 60px auto;
+  padding: 0 24px;
+  gap: 60px;
+}
+
+.hero-left {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.image-card img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid #e5e7eb;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  filter: grayscale(20%);
+  transition: all 0.3s ease;
+}
+
+.image-card img:hover {
+  filter: grayscale(0%);
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.hero-right {
+  flex: 1;
+  min-width: 320px;
+}
+
+.hero-right h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.hero-right h3 {
+  font-size: 1.5rem;
+  color: #6b7280;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.hero-right p {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+  color: #4b5563;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.contact-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* ========== Sections ========== */
+section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  position: relative;
+  color: #1f2937;
+  padding-bottom: 12px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+body.dark h2 {
+  color: #f9fafb;
+}
+
+body.dark h2::after {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+}
+
+.skills ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.skills li {
+  background: #f8fafc;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skills li:hover {
+  background: #f1f5f9;
+  transform: translateX(4px);
+}
+
+body.dark .skills li {
+  background: #1f2937;
+  border-left-color: #60a5fa;
+}
+
+body.dark .skills li:hover {
+  background: #374151;
+}
+
+.proj-item {
+  margin-bottom: 40px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.proj-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+body.dark .proj-item {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark .proj-item:hover {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.proj-item h4 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+body.dark .proj-item h4 {
+  color: #f9fafb;
+}
+
+.proj-item p {
+  margin-bottom: 12px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+body.dark .proj-item p {
+  color: #d1d5db;
+}
+
+.proj-links {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.proj-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid #374151;
+}
+
+.proj-btn:hover {
+  background-color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  margin-top: 100px;
+  padding: 40px 24px;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: #f9fafb;
+}
+
+footer .social-icons {
+  margin-bottom: 20px;
+}
+
+footer img {
+  width: 32px;
+  height: 32px;
+  margin: 0 12px;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+  filter: brightness(0.9);
+}
+
+footer img:hover {
+  transform: scale(1.15) translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* ========== Typography ========== */
+strong {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+body.dark strong {
+  color: #f9fafb;
+}
+
+/* ========== Responsive Design ========== */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    margin: 80px auto 40px auto;
+    gap: 40px;
+  }
+
+  .hero-right h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-right h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-buttons {
+    justify-content: center;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 200px;
+  }
+
+  .skills ul {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  section {
+    margin: 60px auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 0 16px;
+  }
+
+  .hero-right h1 {
+    font-size: 2rem;
+  }
+
+  .image-card img {
+    width: 200px;
+    height: 200px;
+  }
+
+  section {
+    padding: 0 16px;
+  }
+}
